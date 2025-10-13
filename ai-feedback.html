@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered script feedback for mock trial students">
+    <title>AI Script Feedback - MFA</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>⚖️</span>
+                <span>Mock Trial Academy</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai-feedback.html">AI Feedback</a></li>
+                <li><a href="video-academy.html">Video Academy</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI Script Feedback</h1>
+            <p>Get instant, personalized feedback on your mock trial scripts powered by advanced AI.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="alert alert-info">
+            <strong>💡 Pro Tip:</strong> For best results, include context about your role (attorney/witness), 
+            the type of script (opening, closing, direct/cross examination), and what you're trying to accomplish.
+        </div>
+
+        <!-- Script Input Tool -->
+        <div class="tool-container">
+            <h2>Submit Your Script</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Paste your script below and our AI will analyze it for clarity, persuasiveness, 
+                legal reasoning, and delivery effectiveness.
+            </p>
+
+            <form id="feedbackForm">
+                <div class="textarea-container">
+                    <label for="scriptType">Script Type:</label>
+                    <select id="scriptType" class="script-input" style="height: auto; padding: 0.75rem;">
+                        <option value="opening">Opening Statement</option>
+                        <option value="closing">Closing Argument</option>
+                        <option value="direct">Direct Examination</option>
+                        <option value="cross">Cross Examination</option>
+                        <option value="witness">Witness Statement</option>
+                    </select>
+                </div>
+
+                <div class="textarea-container">
+                    <label for="scriptInput">Your Script:</label>
+                    <textarea 
+                        id="scriptInput" 
+                        class="script-input" 
+                        placeholder="Paste your script here... For example:
+
+'Ladies and gentlemen of the jury, today you will hear a case about...'
+
+Or for examinations:
+
+Q: Can you tell us where you were on the evening of October 15th?
+A: I was at the library studying for my finals..."
+                        rows="12"></textarea>
+                </div>
+
+                <button type="submit" class="button" id="submitBtn">
+                    Analyze Script
+                </button>
+            </form>
+
+            <!-- Feedback Results -->
+            <div id="feedbackResults" style="display: none;">
+                <div class="feedback-result">
+                    <h3>🎯 Overall Assessment</h3>
+                    <div id="overallFeedback"></div>
+                </div>
+
+                <div class="feedback-result">
+                    <h3>💪 Strengths</h3>
+                    <ul id="strengthsList"></ul>
+                </div>
+
+                <div class="feedback-result">
+                    <h3>📈 Areas for Improvement</h3>
+                    <ul id="improvementsList"></ul>
+                </div>
+
+                <div class="feedback-result">
+                    <h3>✨ Specific Suggestions</h3>
+                    <ul id="suggestionsList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div style="margin-top: 3rem;">
+            <h2>How Our AI Feedback Works</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>📝 Content Analysis</h3>
+                    <p>
+                        Evaluates the logical flow, argument structure, and persuasiveness 
+                        of your content. Checks for clarity and coherence.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>⚖️ Legal Reasoning</h3>
+                    <p>
+                        Assesses the strength of your legal arguments, proper use of evidence, 
+                        and adherence to mock trial procedures.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎭 Delivery Style</h3>
+                    <p>
+                        Analyzes language choices, pacing indicators, rhetorical devices, 
+                        and overall delivery effectiveness.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Comprehensive Report</h3>
+                    <p>
+                        Provides detailed feedback with specific examples, actionable suggestions, 
+                        and personalized tips for improvement.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div style="margin-top: 3rem;">
+            <h2>Tips for Better Scripts</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Opening Statements</h3>
+                    <p>
+                        • Start with a compelling hook<br>
+                        • Outline your theory of the case<br>
+                        • Preview key evidence<br>
+                        • End with a clear roadmap
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Cross Examination</h3>
+                    <p>
+                        • Use leading questions<br>
+                        • Control the witness<br>
+                        • Build to your points systematically<br>
+                        • Keep questions short and clear
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Closing Arguments</h3>
+                    <p>
+                        • Review the evidence presented<br>
+                        • Connect evidence to your theory<br>
+                        • Address opposing arguments<br>
+                        • End with a powerful call to action
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About MFA</h3>
+                <p>
+                    Mock Trial Academy is your go-to platform for AI-powered mock trial education, 
+                    designed to make advocacy training accessible to all students.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="ai-feedback.html">AI Script Feedback</a></li>
+                    <li><a href="video-academy.html">Video Academy</a></li>
+                    <li><a href="resources.html">Resource Library</a></li>
+                    <li><a href="showcase.html">Collegiate Showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="community.html">Discussion Forum</a></li>
+                    <li><a href="#">Student Success Stories</a></li>
+                    <li><a href="#">Coach Resources</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mock Trial Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ai-feedback.js"></script>
+</body>
+</html>

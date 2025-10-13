@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mock trial resources, case materials, and educational guides">
+    <title>Resource Library - MFA</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>⚖️</span>
+                <span>Mock Trial Academy</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai-feedback.html">AI Feedback</a></li>
+                <li><a href="video-academy.html">Video Academy</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Resource Library</h1>
+            <p>Everything you need for mock trial success—case materials, guides, templates, and more.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <!-- Search Bar -->
+        <div style="margin-bottom: 2rem;">
+            <input 
+                type="text" 
+                id="searchInput"
+                placeholder="🔍 Search resources..." 
+                class="script-input" 
+                style="height: auto; padding: 1rem; font-size: 1rem;">
+        </div>
+
+        <!-- Category Filters -->
+        <div class="resource-categories">
+            <button class="category-filter active" data-category="all">All Resources</button>
+            <button class="category-filter" data-category="case-materials">Case Materials</button>
+            <button class="category-filter" data-category="templates">Templates</button>
+            <button class="category-filter" data-category="guides">Guides</button>
+            <button class="category-filter" data-category="rules">Rules & Procedures</button>
+        </div>
+
+        <!-- Resources Grid -->
+        <div class="cards-container" id="resourcesGrid">
+            <!-- Case Materials -->
+            <div class="card resource-card" data-category="case-materials">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📋</span>
+                <h3>2025 Mock Trial Case Packet</h3>
+                <p>Complete case materials including witness statements, exhibits, and applicable law.</p>
+                <a href="#" class="card-link">Download PDF →</a>
+            </div>
+
+            <div class="card resource-card" data-category="case-materials">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📑</span>
+                <h3>Case Summary & Analysis</h3>
+                <p>Comprehensive breakdown of the case with prosecution and defense perspectives.</p>
+                <a href="#" class="card-link">View Online →</a>
+            </div>
+
+            <div class="card resource-card" data-category="case-materials">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🗂️</span>
+                <h3>Exhibit Library</h3>
+                <p>All case exhibits organized and ready for use in trial preparation.</p>
+                <a href="#" class="card-link">Browse Exhibits →</a>
+            </div>
+
+            <!-- Templates -->
+            <div class="card resource-card" data-category="templates">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📝</span>
+                <h3>Opening Statement Template</h3>
+                <p>Structured template to help you craft compelling opening statements.</p>
+                <a href="#" class="card-link">Download Template →</a>
+            </div>
+
+            <div class="card resource-card" data-category="templates">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">✍️</span>
+                <h3>Cross Examination Planner</h3>
+                <p>Organize your cross examination questions and impeachment strategy.</p>
+                <a href="#" class="card-link">Get Template →</a>
+            </div>
+
+            <div class="card resource-card" data-category="templates">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📄</span>
+                <h3>Closing Argument Outline</h3>
+                <p>Framework for structuring persuasive closing arguments.</p>
+                <a href="#" class="card-link">Download →</a>
+            </div>
+
+            <div class="card resource-card" data-category="templates">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📊</span>
+                <h3>Trial Preparation Checklist</h3>
+                <p>Complete checklist to ensure you're ready for competition.</p>
+                <a href="#" class="card-link">View Checklist →</a>
+            </div>
+
+            <!-- Guides -->
+            <div class="card resource-card" data-category="guides">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📖</span>
+                <h3>Federal Rules of Evidence</h3>
+                <p>Simplified guide to the Federal Rules of Evidence used in mock trial.</p>
+                <a href="#" class="card-link">Read Guide →</a>
+            </div>
+
+            <div class="card resource-card" data-category="guides">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🎯</span>
+                <h3>Objection Quick Reference</h3>
+                <p>Comprehensive list of common objections with examples and responses.</p>
+                <a href="#" class="card-link">View Reference →</a>
+            </div>
+
+            <div class="card resource-card" data-category="guides">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">💼</span>
+                <h3>Trial Advocacy Handbook</h3>
+                <p>Complete guide to trial advocacy techniques and strategies.</p>
+                <a href="#" class="card-link">Download Handbook →</a>
+            </div>
+
+            <div class="card resource-card" data-category="guides">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🎭</span>
+                <h3>Witness Preparation Guide</h3>
+                <p>How to prepare witnesses for direct and cross examination.</p>
+                <a href="#" class="card-link">Read Guide →</a>
+            </div>
+
+            <div class="card resource-card" data-category="guides">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🏆</span>
+                <h3>Competition Strategy Guide</h3>
+                <p>Tips for tournament preparation and performance optimization.</p>
+                <a href="#" class="card-link">View Guide →</a>
+            </div>
+
+            <!-- Rules & Procedures -->
+            <div class="card resource-card" data-category="rules">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">⚖️</span>
+                <h3>Mock Trial Rules & Procedures</h3>
+                <p>Official rules and procedures for mock trial competitions.</p>
+                <a href="#" class="card-link">View Rules →</a>
+            </div>
+
+            <div class="card resource-card" data-category="rules">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📏</span>
+                <h3>Evidence Foundation Guide</h3>
+                <p>How to properly lay foundation for different types of evidence.</p>
+                <a href="#" class="card-link">Learn More →</a>
+            </div>
+
+            <div class="card resource-card" data-category="rules">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🔖</span>
+                <h3>Scoring Rubrics Explained</h3>
+                <p>Understanding how judges score trials and what they look for.</p>
+                <a href="#" class="card-link">Read Guide →</a>
+            </div>
+
+            <!-- Sample Scripts -->
+            <div class="card resource-card" data-category="templates">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">💬</span>
+                <h3>Sample Opening Statements</h3>
+                <p>Examples of effective opening statements from past competitions.</p>
+                <a href="#" class="card-link">View Samples →</a>
+            </div>
+
+            <div class="card resource-card" data-category="templates">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🎤</span>
+                <h3>Sample Closing Arguments</h3>
+                <p>High-scoring closing arguments with annotations and analysis.</p>
+                <a href="#" class="card-link">View Samples →</a>
+            </div>
+
+            <div class="card resource-card" data-category="templates">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">❓</span>
+                <h3>Sample Direct & Cross</h3>
+                <p>Annotated examples of effective direct and cross examinations.</p>
+                <a href="#" class="card-link">View Samples →</a>
+            </div>
+        </div>
+
+        <!-- Quick Access Section -->
+        <div style="margin-top: 4rem;">
+            <h2>Popular Resources</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Case Analysis Tools</h3>
+                    <p>Interactive tools to help you analyze case materials, identify key facts, and develop your theory of the case.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Legal Dictionary</h3>
+                    <p>Comprehensive glossary of legal terms and mock trial terminology with examples.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Time Management Tools</h3>
+                    <p>Templates and calculators to help you manage your trial time effectively.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--background-alt); border-radius: 0.75rem;">
+            <h3>Can't find what you're looking for?</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                We're constantly adding new resources based on student needs. 
+                Let us know what would be helpful for your preparation.
+            </p>
+            <a href="community.html" class="button">Request a Resource</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About MFA</h3>
+                <p>
+                    Mock Trial Academy is your go-to platform for AI-powered mock trial education, 
+                    designed to make advocacy training accessible to all students.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="ai-feedback.html">AI Script Feedback</a></li>
+                    <li><a href="video-academy.html">Video Academy</a></li>
+                    <li><a href="resources.html">Resource Library</a></li>
+                    <li><a href="showcase.html">Collegiate Showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="community.html">Discussion Forum</a></li>
+                    <li><a href="#">Student Success Stories</a></li>
+                    <li><a href="#">Coach Resources</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mock Trial Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/resources.js"></script>
+</body>
+</html>
