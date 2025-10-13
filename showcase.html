@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch championship performances from college mock trial competitions">
+    <title>Collegiate Showcase - MFA</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span>⚖️</span>
+                <span>Mock Trial Academy</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ai-feedback.html">AI Feedback</a></li>
+                <li><a href="video-academy.html">Video Academy</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="community.html">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Collegiate Showcase</h1>
+            <p>Watch championship-winning performances and learn from the best college mock trial teams.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="alert alert-info">
+            <strong>🏆 Learn from Champions:</strong> Study performances from national and regional champions. 
+            Each video includes expert commentary and analysis.
+        </div>
+
+        <!-- Featured Championship -->
+        <div style="margin-top: 2rem; background: white; padding: 2rem; border-radius: 0.75rem; box-shadow: var(--shadow);">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <span style="font-size: 3rem;">🏆</span>
+                <div>
+                    <h2 style="margin: 0; color: var(--primary-color);">2024 National Championship Finals</h2>
+                    <p style="margin: 0; color: var(--text-secondary);">Complete trial with expert analysis</p>
+                </div>
+            </div>
+            <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; margin-bottom: 1rem;">
+                ▶️
+            </div>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                Watch the complete championship finals between Harvard and Yale. This exceptional trial showcases 
+                masterful advocacy, strategic thinking, and compelling performances across all roles. Expert commentary 
+                provides insights into what made these teams successful.
+            </p>
+            <button class="button">Watch Full Trial</button>
+        </div>
+
+        <!-- Performance Categories -->
+        <div style="margin-top: 3rem;">
+            <h2>Browse by Performance Type</h2>
+            <div class="resource-categories">
+                <button class="category-filter active" data-category="all">All Performances</button>
+                <button class="category-filter" data-category="opening">Opening Statements</button>
+                <button class="category-filter" data-category="direct">Direct Examinations</button>
+                <button class="category-filter" data-category="cross">Cross Examinations</button>
+                <button class="category-filter" data-category="closing">Closing Arguments</button>
+            </div>
+        </div>
+
+        <!-- Performance Grid -->
+        <div class="video-grid" id="showcaseGrid">
+            <!-- Opening Statements -->
+            <div class="video-card" data-category="opening">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">🎤</div>
+                <div class="video-info">
+                    <h3>National Champion Opening - Prosecution</h3>
+                    <p>Award-winning opening statement from 2024 nationals. Note the compelling narrative and case theory presentation.</p>
+                    <div class="video-meta">
+                        <span>🏆 1st Place</span>
+                        <span>⏱️ 7 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="opening">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">🎤</div>
+                <div class="video-info">
+                    <h3>National Champion Opening - Defense</h3>
+                    <p>Masterful defense opening establishing reasonable doubt. Excellent use of theme and preview.</p>
+                    <div class="video-meta">
+                        <span>🏆 1st Place</span>
+                        <span>⏱️ 6 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="opening">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">🎤</div>
+                <div class="video-info">
+                    <h3>Regional Finals Opening Analysis</h3>
+                    <p>Side-by-side comparison of two excellent openings with judge commentary.</p>
+                    <div class="video-meta">
+                        <span>🎓 Educational</span>
+                        <span>⏱️ 15 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Examinations -->
+            <div class="video-card" data-category="direct">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #10b981, #059669);">❓</div>
+                <div class="video-info">
+                    <h3>Perfect Direct - Expert Witness</h3>
+                    <p>Flawless direct examination of an expert witness. Note the foundation and clear explanations.</p>
+                    <div class="video-meta">
+                        <span>🏆 1st Place</span>
+                        <span>⏱️ 12 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="direct">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #14b8a6, #10b981);">❓</div>
+                <div class="video-info">
+                    <h3>Direct Examination Masterclass</h3>
+                    <p>Key witness direct with excellent storytelling and evidence introduction.</p>
+                    <div class="video-meta">
+                        <span>🏆 Championship</span>
+                        <span>⏱️ 10 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cross Examinations -->
+            <div class="video-card" data-category="cross">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #f59e0b, #d97706);">🔍</div>
+                <div class="video-info">
+                    <h3>Devastating Cross Examination</h3>
+                    <p>Championship-winning cross that completely impeached the witness. Study the setup and execution.</p>
+                    <div class="video-meta">
+                        <span>🏆 Best Cross</span>
+                        <span>⏱️ 8 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="cross">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #ef4444, #dc2626);">🔍</div>
+                <div class="video-info">
+                    <h3>Strategic Cross - Expert Witness</h3>
+                    <p>Brilliant cross of an expert witness. Focus on how the attorney limits and controls testimony.</p>
+                    <div class="video-meta">
+                        <span>🏆 1st Place</span>
+                        <span>⏱️ 9 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="cross">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #ec4899, #db2777);">🔍</div>
+                <div class="video-info">
+                    <h3>Cross Examination Techniques</h3>
+                    <p>Analysis of multiple championship crosses showing different strategic approaches.</p>
+                    <div class="video-meta">
+                        <span>🎓 Educational</span>
+                        <span>⏱️ 20 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closing Arguments -->
+            <div class="video-card" data-category="closing">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">🎙️</div>
+                <div class="video-info">
+                    <h3>Championship Closing - Prosecution</h3>
+                    <p>Powerful prosecution closing that masterfully weaves evidence into compelling narrative.</p>
+                    <div class="video-meta">
+                        <span>🏆 1st Place</span>
+                        <span>⏱️ 8 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="closing">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">🎙️</div>
+                <div class="video-info">
+                    <h3>Championship Closing - Defense</h3>
+                    <p>Award-winning defense closing addressing every prosecution point with clarity and passion.</p>
+                    <div class="video-meta">
+                        <span>🏆 1st Place</span>
+                        <span>⏱️ 7 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" data-category="closing">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">🎙️</div>
+                <div class="video-info">
+                    <h3>Closing Arguments Comparison</h3>
+                    <p>Expert analysis comparing multiple championship-level closing arguments.</p>
+                    <div class="video-meta">
+                        <span>🎓 Educational</span>
+                        <span>⏱️ 25 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Trials -->
+            <div class="video-card" data-category="all">
+                <div class="video-thumbnail" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">📹</div>
+                <div class="video-info">
+                    <h3>Complete Championship Trial</h3>
+                    <p>Full trial from national semifinals. Watch how elite teams perform across all roles.</p>
+                    <div class="video-meta">
+                        <span>🏆 Semifinals</span>
+                        <span>⏱️ 90 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Teams -->
+        <div style="margin-top: 4rem;">
+            <h2>Championship Teams</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>🏆 2024 National Champions</h3>
+                    <p><strong>Harvard University</strong></p>
+                    <p style="color: var(--text-secondary);">
+                        Undefeated season culminating in a dominant national championship performance. 
+                        Known for innovative case theory and exceptional witness work.
+                    </p>
+                    <a href="#" class="card-link">Watch Their Performances →</a>
+                </div>
+
+                <div class="card">
+                    <h3>🥈 2024 National Runners-Up</h3>
+                    <p><strong>Yale University</strong></p>
+                    <p style="color: var(--text-secondary);">
+                        Outstanding advocacy throughout the tournament. Particularly strong in 
+                        cross examination and closing arguments.
+                    </p>
+                    <a href="#" class="card-link">Watch Their Performances →</a>
+                </div>
+
+                <div class="card">
+                    <h3>⭐ Regional Champions</h3>
+                    <p><strong>Multiple Universities</strong></p>
+                    <p style="color: var(--text-secondary);">
+                        View outstanding performances from regional championship teams across 
+                        the country representing diverse approaches to advocacy.
+                    </p>
+                    <a href="#" class="card-link">Browse Performances →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analysis Section -->
+        <div style="margin-top: 3rem;">
+            <h2>Expert Analysis & Breakdowns</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>What Judges Look For</h3>
+                    <p>
+                        Insights from national-level judges on what separates good performances 
+                        from championship-winning ones.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Performance Analysis</h3>
+                    <p>
+                        Detailed breakdowns of winning performances analyzing technique, 
+                        strategy, and execution.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Key Takeaways</h3>
+                    <p>
+                        Actionable lessons you can apply to your own mock trial preparation 
+                        and performances.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About MFA</h3>
+                <p>
+                    Mock Trial Academy is your go-to platform for AI-powered mock trial education, 
+                    designed to make advocacy training accessible to all students.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="ai-feedback.html">AI Script Feedback</a></li>
+                    <li><a href="video-academy.html">Video Academy</a></li>
+                    <li><a href="resources.html">Resource Library</a></li>
+                    <li><a href="showcase.html">Collegiate Showcase</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="community.html">Discussion Forum</a></li>
+                    <li><a href="#">Student Success Stories</a></li>
+                    <li><a href="#">Coach Resources</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mock Trial Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/showcase.js"></script>
+</body>
+</html>
