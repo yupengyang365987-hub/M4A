@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 noResultsMsg.style.padding = '3rem';
                 noResultsMsg.style.color = 'var(--text-secondary)';
                 noResultsMsg.innerHTML = `
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
                     <h3>No resources found</h3>
                     <p>Try adjusting your search or filter criteria.</p>
                 `;

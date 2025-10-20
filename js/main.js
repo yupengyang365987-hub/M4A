@@ -123,7 +123,24 @@ function closeAllDropdowns(except) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const normalizePath = (path) => {
+        if (!path) {
+            return '/';
+        }
+
+        let normalized = path;
+        if (normalized.endsWith('index.html')) {
+            normalized = normalized.slice(0, -'index.html'.length);
+        }
+
+        if (normalized.length > 1 && normalized.endsWith('/')) {
+            normalized = normalized.slice(0, -1);
+        }
+
+        return normalized || '/';
+    };
+
+    const currentPath = normalizePath(window.location.pathname);
     const navLinks = document.querySelectorAll('.nav-links a');
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-links');
@@ -133,7 +150,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const storedLanguage = storedLanguagePreference && translations[storedLanguagePreference] ? storedLanguagePreference : 'en';
 
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
+        const href = link.getAttribute('href');
+        if (!href) {
+            return;
+        }
+
+        const linkPath = normalizePath(new URL(href, window.location.origin + '/').pathname);
+
+        if (currentPath === linkPath || (currentPath.startsWith(linkPath + '/') && linkPath !== '/')) {
             link.classList.add('active');
         }
 
@@ -153,6 +177,16 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', String(!expanded));
             navList.classList.toggle('mobile-active');
         });
+    }
+
+    const videoAcademyLink = Array.from(navLinks).find(link => (link.getAttribute('href') || '').includes('video-academy'));
+    if (currentPath.startsWith('/videos/')) {
+        videoAcademyLink?.classList.add('active');
+    }
+
+    const showcaseLink = Array.from(navLinks).find(link => (link.getAttribute('href') || '').includes('showcase'));
+    if (currentPath.startsWith('/showcase/') && showcaseLink) {
+        showcaseLink.classList.add('active');
     }
 
     dropdowns.forEach(dropdown => {
