@@ -3,26 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-powered script feedback for mock trial students">
-    <title>AI Script Feedback - MFA</title>
+    <meta name="description" content="Mock For All (M4A) AI-powered script feedback for mock trial students">
+    <title>AI Script Feedback - Mock For All (M4A)</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Mock For All home">
                 <span>⚖️</span>
-                <span>Mock Trial Academy</span>
+                <span data-i18n="branding.name">Mock For All</span>
             </a>
-            <ul class="nav-links">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-trigger" data-i18n="nav.about.label" aria-haspopup="true" aria-expanded="false">
+                        About M4A
+                        <span class="dropdown-chevron" aria-hidden="true"></span>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="index.html#mission" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">🧭</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.mission.title">Our Mission</span>
+                                <span class="dropdown-description" data-i18n="nav.about.mission.description">Explains what Mock For All stands for and its core values.</span>
+                            </div>
+                        </a>
+                        <a href="index.html#founders" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">💡</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.founders.title">Founders' Story</span>
+                                <span class="dropdown-description" data-i18n="nav.about.founders.description">Shares how and why Mock For All started.</span>
+                            </div>
+                        </a>
+                        <a href="index.html#team" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">👥</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.team.title">Our Team</span>
+                                <span class="dropdown-description" data-i18n="nav.about.team.description">Introduces the members, volunteers, and contributors behind the platform.</span>
+                            </div>
+                        </a>
+                        <a href="index.html#partners" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">🤝</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.partners.title">Partners &amp; Advisors</span>
+                                <span class="dropdown-description" data-i18n="nav.about.partners.description">Highlights schools, mentors, or organizations that collaborate with M4A.</span>
+                            </div>
+                        </a>
+                        <a href="index.html#press" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">📣</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.press.title">Press &amp; Impact</span>
+                                <span class="dropdown-description" data-i18n="nav.about.press.description">Shows the platform’s reach, statistics, and any media mentions.</span>
+                            </div>
+                        </a>
+                        <a href="index.html#faq" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">❓</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.faq.title">FAQ / Governance</span>
+                                <span class="dropdown-description" data-i18n="nav.about.faq.description">Provides transparency about how the platform operates and answers common questions.</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
                 <li><a href="ai-feedback.html">AI Feedback</a></li>
                 <li><a href="video-academy.html">Video Academy</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="showcase.html">Showcase</a></li>
                 <li><a href="community.html">Community</a></li>
             </ul>
+            <div class="language-toggle" role="group" aria-label="Language toggle">
+                <button class="language-option active" data-language="en" type="button">EN</button>
+                <button class="language-option" data-language="zh" type="button">中文</button>
+            </div>
         </div>
     </nav>
 
@@ -185,9 +243,9 @@ A: I was at the library studying for my finals..."
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About MFA</h3>
+                <h3>About M4A</h3>
                 <p>
-                    Mock Trial Academy is your go-to platform for AI-powered mock trial education, 
+                    Mock For All is your go-to platform for AI-powered mock trial education,
                     designed to make advocacy training accessible to all students.
                 </p>
             </div>
@@ -223,7 +281,7 @@ A: I was at the library studying for my finals..."
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Mock Trial Academy. All rights reserved.</p>
+            <p>&copy; 2025 Mock For All. All rights reserved.</p>
         </div>
     </footer>
 
