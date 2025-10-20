@@ -3,26 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MFA - Mock Trial Academy. AI-powered mock trial learning platform for students.">
-    <title>MFA - Mock Trial Academy</title>
+    <meta name="description" content="Mock For All (M4A) - AI-powered mock trial learning platform for students.">
+    <title>Mock For All (M4A) – AI Mock Trial Academy</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Mock For All home">
                 <span>⚖️</span>
-                <span>Mock Trial Academy</span>
+                <span data-i18n="branding.name">Mock For All</span>
             </a>
-            <ul class="nav-links">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-trigger" data-i18n="nav.about.label" aria-haspopup="true" aria-expanded="false">
+                        About M4A
+                        <span class="dropdown-chevron" aria-hidden="true"></span>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                        <a href="#mission" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">🧭</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.mission.title">Our Mission</span>
+                                <span class="dropdown-description" data-i18n="nav.about.mission.description">Explains what Mock For All stands for and its core values.</span>
+                            </div>
+                        </a>
+                        <a href="#founders" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">💡</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.founders.title">Founders' Story</span>
+                                <span class="dropdown-description" data-i18n="nav.about.founders.description">Shares how and why Mock For All started.</span>
+                            </div>
+                        </a>
+                        <a href="#team" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">👥</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.team.title">Our Team</span>
+                                <span class="dropdown-description" data-i18n="nav.about.team.description">Introduces the members, volunteers, and contributors behind the platform.</span>
+                            </div>
+                        </a>
+                        <a href="#partners" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">🤝</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.partners.title">Partners &amp; Advisors</span>
+                                <span class="dropdown-description" data-i18n="nav.about.partners.description">Highlights schools, mentors, or organizations that collaborate with M4A.</span>
+                            </div>
+                        </a>
+                        <a href="#press" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">📣</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.press.title">Press &amp; Impact</span>
+                                <span class="dropdown-description" data-i18n="nav.about.press.description">Shows the platform’s reach, statistics, and any media mentions.</span>
+                            </div>
+                        </a>
+                        <a href="#faq" class="dropdown-item" role="menuitem">
+                            <span class="dropdown-icon" aria-hidden="true">❓</span>
+                            <div class="dropdown-text">
+                                <span class="dropdown-title" data-i18n="nav.about.faq.title">FAQ / Governance</span>
+                                <span class="dropdown-description" data-i18n="nav.about.faq.description">Provides transparency about how the platform operates and answers common questions.</span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
                 <li><a href="ai-feedback.html">AI Feedback</a></li>
                 <li><a href="video-academy.html">Video Academy</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="showcase.html">Showcase</a></li>
                 <li><a href="community.html">Community</a></li>
             </ul>
+            <div class="language-toggle" role="group" aria-label="Language toggle">
+                <button class="language-option active" data-language="en" type="button">EN</button>
+                <button class="language-option" data-language="zh" type="button">中文</button>
+            </div>
         </div>
     </nav>
 
@@ -39,23 +97,71 @@
     </section>
 
     <!-- Mission Section -->
-    <section class="mission">
+    <section class="mission" id="mission">
         <div class="mission-content">
             <h2>Our Mission</h2>
             <p>
-                Mock Trial Academy (MFA) is dedicated to democratizing access to high-quality mock trial education. 
+                Mock For All (M4A) is dedicated to democratizing access to high-quality mock trial education.
                 We believe every student deserves the tools and guidance to excel in advocacy, regardless of their school's resources.
             </p>
             <p>
-                Through AI-powered feedback, expert video tutorials, and a vibrant community, we're building the future 
+                Through AI-powered feedback, expert video tutorials, and a vibrant community, we're building the future
                 of mock trial education—one student at a time.
             </p>
         </div>
     </section>
 
+    <section class="about-overview" aria-labelledby="about-overview-title">
+        <div class="container">
+            <h2 class="section-title" id="about-overview-title">Discover Mock For All</h2>
+            <div class="about-grid">
+                <article class="about-card" id="founders">
+                    <div class="about-card-icon" aria-hidden="true">💡</div>
+                    <h3>Founders' Story</h3>
+                    <p>
+                        Learn how M4A began as a grassroots effort to expand mock trial access for every student,
+                        regardless of geography or resources.
+                    </p>
+                </article>
+                <article class="about-card" id="team">
+                    <div class="about-card-icon" aria-hidden="true">👥</div>
+                    <h3>Our Team</h3>
+                    <p>
+                        Meet the coaches, educators, technologists, and volunteers who craft lessons,
+                        build tools, and mentor the next generation of advocates.
+                    </p>
+                </article>
+                <article class="about-card" id="partners">
+                    <div class="about-card-icon" aria-hidden="true">🤝</div>
+                    <h3>Partners &amp; Advisors</h3>
+                    <p>
+                        Explore the schools, law firms, and civic organizations partnering with M4A
+                        to bring equitable advocacy education to life.
+                    </p>
+                </article>
+                <article class="about-card" id="press">
+                    <div class="about-card-icon" aria-hidden="true">📣</div>
+                    <h3>Press &amp; Impact</h3>
+                    <p>
+                        See the milestones, competition highlights, and media features that showcase the
+                        real-world impact Mock For All is making.
+                    </p>
+                </article>
+                <article class="about-card" id="faq">
+                    <div class="about-card-icon" aria-hidden="true">❓</div>
+                    <h3>FAQ / Governance</h3>
+                    <p>
+                        Understand how M4A operates, funds its programming, and prioritizes transparency
+                        for students, families, and educators.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features">
-        <h2 class="section-title">Why Choose MFA?</h2>
+        <h2 class="section-title">Why Choose M4A?</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🤖</div>
@@ -156,9 +262,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>About MFA</h3>
+                <h3>About M4A</h3>
                 <p>
-                    Mock Trial Academy is your go-to platform for AI-powered mock trial education, 
+                    Mock For All is your go-to platform for AI-powered mock trial education,
                     designed to make advocacy training accessible to all students.
                 </p>
             </div>
@@ -194,7 +300,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Mock Trial Academy. All rights reserved.</p>
+            <p>&copy; 2025 Mock For All. All rights reserved.</p>
         </div>
     </footer>
 

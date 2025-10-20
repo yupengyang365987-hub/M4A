@@ -1,10 +1,10 @@
-# MFA - Mock Trial Academy
+# Mock For All (M4A)
 
 An AI-powered mock trial learning platform designed to make advocacy training accessible to all students.
 
 ## 🎯 Overview
 
-Mock Trial Academy (MFA) is a comprehensive web-based platform that provides students with the tools, resources, and community support they need to excel in mock trial competitions. Drawing inspiration from educational platforms like Khan Academy and Grammarly, MFA combines AI-powered feedback, expert video tutorials, and a supportive community to create an engaging learning experience.
+Mock For All (M4A) is a comprehensive web-based platform that provides students with the tools, resources, and community support they need to excel in mock trial competitions. Drawing inspiration from educational platforms like Khan Academy and Grammarly, M4A combines AI-powered feedback, expert video tutorials, and a supportive community to create an engaging learning experience.
 
 ## ✨ Features
 
@@ -54,7 +54,7 @@ No build process or dependencies required - this is a static website that runs d
 ## 📁 Project Structure
 
 ```
-MFA/
+M4A/
 ├── index.html              # Home page with mission and features
 ├── ai-feedback.html        # AI Script Feedback tool
 ├── video-academy.html      # Video tutorial library
@@ -75,7 +75,7 @@ MFA/
 
 ## 🎨 Design Philosophy
 
-MFA is designed to be:
+M4A is designed to be:
 - **Student-friendly**: Clear navigation, intuitive interface, and helpful guidance
 - **Interactive**: Engaging features that encourage active learning
 - **Accessible**: Works on all devices and screen sizes
@@ -100,7 +100,7 @@ MFA is designed to be:
 
 ## 📝 License
 
-© 2025 Mock Trial Academy. All rights reserved.
+© 2025 Mock For All. All rights reserved.
 
 ## 🤝 Contributing
 
