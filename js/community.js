@@ -47,8 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (actionText.includes('Replies')) {
                     alert('Opening discussion thread...\n\nIn a production environment, this would show all replies and allow you to add your own comment.');
                 } else if (actionText.includes('Save')) {
-                    this.textContent = this.textContent.includes('📌') ? '🔖 Save' : '📌 Saved';
-                    this.style.color = this.textContent.includes('📌') ? 'var(--primary-color)' : '';
+                    const isSaved = this.classList.toggle('saved');
+                    this.textContent = isSaved ? 'Saved' : 'Save';
+                    this.style.color = isSaved ? 'var(--primary-color)' : '';
+                    this.style.fontWeight = isSaved ? '600' : '';
                 }
             });
         });

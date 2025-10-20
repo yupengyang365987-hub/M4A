@@ -160,18 +160,18 @@ function displayFeedback(feedback) {
     overallDiv.innerHTML = `<p style="color: var(--text-secondary); line-height: 1.8;">${feedback.overall}</p>`;
 
     // Display strengths
-    strengthsList.innerHTML = feedback.strengths.map(item => 
-        `<li style="color: var(--success-color); margin-bottom: 0.75rem;">✓ ${item}</li>`
+    strengthsList.innerHTML = feedback.strengths.map(item =>
+        `<li style="color: var(--success-color); margin-bottom: 0.75rem;">${item}</li>`
     ).join('');
 
     // Display improvements
-    improvementsList.innerHTML = feedback.improvements.map(item => 
-        `<li style="color: var(--warning-color); margin-bottom: 0.75rem;">→ ${item}</li>`
+    improvementsList.innerHTML = feedback.improvements.map(item =>
+        `<li style="color: var(--warning-color); margin-bottom: 0.75rem;">${item}</li>`
     ).join('');
 
     // Display suggestions
-    suggestionsList.innerHTML = feedback.suggestions.map(item => 
-        `<li style="color: var(--primary-color); margin-bottom: 0.75rem;">💡 ${item}</li>`
+    suggestionsList.innerHTML = feedback.suggestions.map(item =>
+        `<li style="color: var(--primary-color); margin-bottom: 0.75rem;">${item}</li>`
     ).join('');
 
     // Show results
