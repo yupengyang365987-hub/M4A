@@ -140,7 +140,7 @@ nav {
 
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 0.75rem);
+    top: 100%;
     left: 0;
     min-width: 320px;
     background: var(--background);
@@ -184,9 +184,7 @@ nav {
 }
 
 .dropdown-icon {
-    width: 2.75rem;
-    height: 2.75rem;
-    font-size: 0.75rem;
+    display: none;
 }
 
 .dropdown-title {
@@ -485,14 +483,12 @@ nav {
 }
 
 .about-card-icon {
-    width: 3rem;
-    height: 3rem;
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
+    display: none;
 }
 
 .about-card h3 {
     font-size: 1.25rem;
+    margin-top: 0;
     margin-bottom: 0.75rem;
     color: var(--primary-color);
 }
