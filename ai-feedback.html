@@ -89,148 +89,30 @@
 
     <!-- Main Content -->
     <section class="content-section">
-        <div class="alert alert-info">
-            <strong>Pro Tip:</strong> For best results, include context about your role (attorney/witness),
-            the type of script (opening, closing, direct/cross examination), and what you're trying to accomplish.
-        </div>
-
-        <!-- Script Input Tool -->
         <div class="tool-container">
-            <h2>Submit Your Script</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                Paste your script below and our AI will analyze it for clarity, persuasiveness, 
-                legal reasoning, and delivery effectiveness.
+            <h2>Mock For All AI Assistant</h2>
+            <p>
+                Interact with the embedded Mock For All assistant below to receive instant feedback and coaching
+                on your mock trial scripts.
             </p>
 
-            <form id="feedbackForm">
-                <div class="textarea-container">
-                    <label for="scriptType">Script Type:</label>
-                    <select id="scriptType" class="script-input" style="height: auto; padding: 0.75rem;">
-                        <option value="opening">Opening Statement</option>
-                        <option value="closing">Closing Argument</option>
-                        <option value="direct">Direct Examination</option>
-                        <option value="cross">Cross Examination</option>
-                        <option value="witness">Witness Statement</option>
-                    </select>
-                </div>
-
-                <div class="textarea-container">
-                    <label for="scriptInput">Your Script:</label>
-                    <textarea 
-                        id="scriptInput" 
-                        class="script-input" 
-                        placeholder="Paste your script here... For example:
-
-'Ladies and gentlemen of the jury, today you will hear a case about...'
-
-Or for examinations:
-
-Q: Can you tell us where you were on the evening of October 15th?
-A: I was at the library studying for my finals..."
-                        rows="12"></textarea>
-                </div>
-
-                <button type="submit" class="button" id="submitBtn">
-                    Analyze Script
-                </button>
-            </form>
-
-            <!-- Feedback Results -->
-            <div id="feedbackResults" style="display: none;">
-                <div class="feedback-result">
-                    <h3>Overall Assessment</h3>
-                    <div id="overallFeedback"></div>
-                </div>
-
-                <div class="feedback-result">
-                    <h3>Strengths</h3>
-                    <ul id="strengthsList"></ul>
-                </div>
-
-                <div class="feedback-result">
-                    <h3>Areas for Improvement</h3>
-                    <ul id="improvementsList"></ul>
-                </div>
-
-                <div class="feedback-result">
-                    <h3>Specific Suggestions</h3>
-                    <ul id="suggestionsList"></ul>
-                </div>
+            <div class="embed-container">
+                <iframe
+                    src="https://chatgpt.com/g/g-68d8e0776ae4819189969e67b257deb0-mock-for-all"
+                    title="Mock For All AI Assistant"
+                    loading="lazy"
+                    allow="clipboard-write; microphone; camera; display-capture"
+                    referrerpolicy="no-referrer"
+                ></iframe>
             </div>
-        </div>
 
-        <!-- How It Works -->
-        <div style="margin-top: 3rem;">
-            <h2>How Our AI Feedback Works</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Content Analysis</h3>
-                    <p>
-                        Evaluates the logical flow, argument structure, and persuasiveness
-                        of your content. Checks for clarity and coherence.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Legal Reasoning</h3>
-                    <p>
-                        Assesses the strength of your legal arguments, proper use of evidence,
-                        and adherence to mock trial procedures.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Delivery Style</h3>
-                    <p>
-                        Analyzes language choices, pacing indicators, rhetorical devices,
-                        and overall delivery effectiveness.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Comprehensive Report</h3>
-                    <p>
-                        Provides detailed feedback with specific examples, actionable suggestions,
-                        and personalized tips for improvement.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tips Section -->
-        <div style="margin-top: 3rem;">
-            <h2>Tips for Better Scripts</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Opening Statements</h3>
-                    <p>
-                        • Start with a compelling hook<br>
-                        • Outline your theory of the case<br>
-                        • Preview key evidence<br>
-                        • End with a clear roadmap
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Cross Examination</h3>
-                    <p>
-                        • Use leading questions<br>
-                        • Control the witness<br>
-                        • Build to your points systematically<br>
-                        • Keep questions short and clear
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Closing Arguments</h3>
-                    <p>
-                        • Review the evidence presented<br>
-                        • Connect evidence to your theory<br>
-                        • Address opposing arguments<br>
-                        • End with a powerful call to action
-                    </p>
-                </div>
-            </div>
+            <p class="embed-note">
+                If the assistant does not load, you can
+                <a href="https://chatgpt.com/g/g-68d8e0776ae4819189969e67b257deb0-mock-for-all" target="_blank" rel="noopener">
+                    open it in a new tab
+                </a>
+                instead.
+            </p>
         </div>
     </section>
 
@@ -280,6 +162,5 @@ A: I was at the library studying for my finals..."
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/ai-feedback.js"></script>
 </body>
 </html>
