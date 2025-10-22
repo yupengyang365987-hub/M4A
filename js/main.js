@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearCloseTimeout();
             closeTimeoutId = window.setTimeout(() => {
                 closeDropdown();
-            }, 200);
+            }, 350);
         };
 
         const openDropdown = () => {
@@ -263,6 +263,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         dropdown.addEventListener('mouseleave', () => {
+            if (isDesktopView()) {
+                scheduleClose();
+            }
+        });
+
+        menu.addEventListener('mouseenter', () => {
+            if (isDesktopView()) {
+                clearCloseTimeout();
+            }
+        });
+
+        menu.addEventListener('mouseleave', () => {
             if (isDesktopView()) {
                 scheduleClose();
             }
