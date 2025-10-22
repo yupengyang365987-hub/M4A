@@ -146,8 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navList = document.querySelector('.nav-links');
     const dropdowns = document.querySelectorAll('.dropdown');
     const languageButtons = document.querySelectorAll('.language-option');
+    const hasLanguageToggle = languageButtons.length > 0;
     const storedLanguagePreference = localStorage.getItem('m4a-language');
-    const storedLanguage = storedLanguagePreference && translations[storedLanguagePreference] ? storedLanguagePreference : 'en';
+    const storedLanguage = hasLanguageToggle && storedLanguagePreference && translations[storedLanguagePreference]
+        ? storedLanguagePreference
+        : 'en';
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
@@ -197,13 +200,31 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        let closeTimeoutId = null;
+
+        const clearCloseTimeout = () => {
+            if (closeTimeoutId !== null) {
+                window.clearTimeout(closeTimeoutId);
+                closeTimeoutId = null;
+            }
+        };
+
+        const scheduleClose = () => {
+            clearCloseTimeout();
+            closeTimeoutId = window.setTimeout(() => {
+                closeDropdown();
+            }, 200);
+        };
+
         const openDropdown = () => {
+            clearCloseTimeout();
             closeAllDropdowns(dropdown);
             dropdown.classList.add('open');
             trigger.setAttribute('aria-expanded', 'true');
         };
 
         const closeDropdown = () => {
+            clearCloseTimeout();
             dropdown.classList.remove('open');
             trigger.setAttribute('aria-expanded', 'false');
         };
@@ -235,9 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        dropdown.addEventListener('mouseenter', () => {
+            if (isDesktopView()) {
+                clearCloseTimeout();
+            }
+        });
+
         dropdown.addEventListener('mouseleave', () => {
             if (isDesktopView()) {
-                closeDropdown();
+                scheduleClose();
             }
         });
 
