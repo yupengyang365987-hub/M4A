@@ -4,69 +4,11 @@ const translations = {
     en: {
         branding: {
             name: 'Mock For All'
-        },
-        nav: {
-            about: {
-                label: 'About M4A',
-                mission: {
-                    title: 'Our Mission',
-                    description: 'Explains what Mock For All stands for and its core values.'
-                },
-                founders: {
-                    title: "Founders' Story",
-                    description: 'Shares how and why Mock For All started.'
-                },
-                team: {
-                    title: 'Our Team',
-                    description: 'Introduces the members, volunteers, and contributors behind the platform.'
-                },
-                partners: {
-                    title: 'Partners & Advisors',
-                    description: 'Highlights schools, mentors, or organizations that collaborate with M4A.'
-                },
-                press: {
-                    title: 'Press & Impact',
-                    description: 'Shows the platform’s reach, statistics, and any media mentions.'
-                },
-                faq: {
-                    title: 'FAQ / Governance',
-                    description: 'Provides transparency about how the platform operates and answers common questions.'
-                }
-            }
         }
     },
     zh: {
         branding: {
             name: 'Mock For All 慕辩众享'
-        },
-        nav: {
-            about: {
-                label: '关于M4A',
-                mission: {
-                    title: '愿景与使命',
-                    description: '阐述 Mock For All 的核心价值与教育理念。'
-                },
-                founders: {
-                    title: '创立故事',
-                    description: '分享 Mock For All 成立的初心与历程。'
-                },
-                team: {
-                    title: '我们的团队',
-                    description: '介绍平台背后的团队成员、志愿者与贡献者。'
-                },
-                partners: {
-                    title: '合作伙伴与顾问',
-                    description: '展示与 M4A 合作的学校、导师及机构。'
-                },
-                press: {
-                    title: '媒体与影响',
-                    description: '呈现平台的影响力数据与媒体报道。'
-                },
-                faq: {
-                    title: '常见问题与治理',
-                    description: '说明平台的运营透明度并解答常见疑问。'
-                }
-            }
         }
     }
 };
@@ -106,22 +48,6 @@ function updateLanguage(language) {
     localStorage.setItem('m4a-language', language);
 }
 
-function isDesktopView() {
-    return window.matchMedia('(min-width: 769px)').matches;
-}
-
-function closeAllDropdowns(except) {
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-        if (dropdown !== except) {
-            dropdown.classList.remove('open');
-            const trigger = dropdown.querySelector('.dropdown-trigger');
-            if (trigger) {
-                trigger.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const normalizePath = (path) => {
         if (!path) {
@@ -144,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-links');
-    const dropdowns = document.querySelectorAll('.dropdown');
     const languageButtons = document.querySelectorAll('.language-option');
     const hasLanguageToggle = languageButtons.length > 0;
     const storedLanguagePreference = localStorage.getItem('m4a-language');
@@ -191,124 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentPath.startsWith('/showcase/') && showcaseLink) {
         showcaseLink.classList.add('active');
     }
-
-    dropdowns.forEach(dropdown => {
-        const trigger = dropdown.querySelector('.dropdown-trigger');
-        const menu = dropdown.querySelector('.dropdown-menu');
-
-        if (!trigger || !menu) {
-            return;
-        }
-
-        let closeTimeoutId = null;
-
-        const clearCloseTimeout = () => {
-            if (closeTimeoutId !== null) {
-                window.clearTimeout(closeTimeoutId);
-                closeTimeoutId = null;
-            }
-        };
-
-        const scheduleClose = () => {
-            clearCloseTimeout();
-            closeTimeoutId = window.setTimeout(() => {
-                closeDropdown();
-            }, 350);
-        };
-
-        const openDropdown = () => {
-            clearCloseTimeout();
-            closeAllDropdowns(dropdown);
-            dropdown.classList.add('open');
-            trigger.setAttribute('aria-expanded', 'true');
-        };
-
-        const closeDropdown = () => {
-            clearCloseTimeout();
-            dropdown.classList.remove('open');
-            trigger.setAttribute('aria-expanded', 'false');
-        };
-
-        trigger.addEventListener('click', event => {
-            if (isDesktopView()) {
-                event.preventDefault();
-                if (dropdown.classList.contains('open')) {
-                    closeDropdown();
-                } else {
-                    openDropdown();
-                }
-            } else {
-                event.preventDefault();
-                const isOpen = dropdown.classList.toggle('open');
-                trigger.setAttribute('aria-expanded', String(isOpen));
-            }
-        });
-
-        trigger.addEventListener('mouseenter', () => {
-            if (isDesktopView()) {
-                openDropdown();
-            }
-        });
-
-        trigger.addEventListener('focus', () => {
-            if (isDesktopView()) {
-                openDropdown();
-            }
-        });
-
-        dropdown.addEventListener('mouseenter', () => {
-            if (isDesktopView()) {
-                clearCloseTimeout();
-            }
-        });
-
-        dropdown.addEventListener('mouseleave', () => {
-            if (isDesktopView()) {
-                scheduleClose();
-            }
-        });
-
-        menu.addEventListener('mouseenter', () => {
-            if (isDesktopView()) {
-                clearCloseTimeout();
-            }
-        });
-
-        menu.addEventListener('mouseleave', () => {
-            if (isDesktopView()) {
-                scheduleClose();
-            }
-        });
-
-        dropdown.addEventListener('keyup', event => {
-            if (event.key === 'Escape') {
-                closeDropdown();
-                trigger.focus();
-            }
-        });
-    });
-
-    document.addEventListener('click', event => {
-        const target = event.target;
-        if (!(target instanceof Element)) {
-            return;
-        }
-
-        if (!target.closest('.dropdown')) {
-            closeAllDropdowns();
-        }
-    });
-
-    document.addEventListener('focusin', event => {
-        const target = event.target;
-        if (!(target instanceof Element)) {
-            return;
-        }
-
-        if (!target.closest('.dropdown')) {
-            closeAllDropdowns();
-        }
-    });
 
     languageButtons.forEach(button => {
         button.addEventListener('click', () => {
