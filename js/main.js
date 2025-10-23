@@ -106,22 +106,6 @@ function updateLanguage(language) {
     localStorage.setItem('m4a-language', language);
 }
 
-function isDesktopView() {
-    return window.matchMedia('(min-width: 769px)').matches;
-}
-
-function closeAllDropdowns(except) {
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-        if (dropdown !== except) {
-            dropdown.classList.remove('open');
-            const trigger = dropdown.querySelector('.dropdown-trigger');
-            if (trigger) {
-                trigger.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     const normalizePath = (path) => {
         if (!path) {
@@ -144,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const menuToggle = document.querySelector('.menu-toggle');
     const navList = document.querySelector('.nav-links');
-    const dropdowns = document.querySelectorAll('.dropdown');
     const languageButtons = document.querySelectorAll('.language-option');
     const hasLanguageToggle = languageButtons.length > 0;
     const storedLanguagePreference = localStorage.getItem('m4a-language');
@@ -191,124 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentPath.startsWith('/showcase/') && showcaseLink) {
         showcaseLink.classList.add('active');
     }
-
-    dropdowns.forEach(dropdown => {
-        const trigger = dropdown.querySelector('.dropdown-trigger');
-        const menu = dropdown.querySelector('.dropdown-menu');
-
-        if (!trigger || !menu) {
-            return;
-        }
-
-        let closeTimeoutId = null;
-
-        const clearCloseTimeout = () => {
-            if (closeTimeoutId !== null) {
-                window.clearTimeout(closeTimeoutId);
-                closeTimeoutId = null;
-            }
-        };
-
-        const scheduleClose = () => {
-            clearCloseTimeout();
-            closeTimeoutId = window.setTimeout(() => {
-                closeDropdown();
-            }, 350);
-        };
-
-        const openDropdown = () => {
-            clearCloseTimeout();
-            closeAllDropdowns(dropdown);
-            dropdown.classList.add('open');
-            trigger.setAttribute('aria-expanded', 'true');
-        };
-
-        const closeDropdown = () => {
-            clearCloseTimeout();
-            dropdown.classList.remove('open');
-            trigger.setAttribute('aria-expanded', 'false');
-        };
-
-        trigger.addEventListener('click', event => {
-            if (isDesktopView()) {
-                event.preventDefault();
-                if (dropdown.classList.contains('open')) {
-                    closeDropdown();
-                } else {
-                    openDropdown();
-                }
-            } else {
-                event.preventDefault();
-                const isOpen = dropdown.classList.toggle('open');
-                trigger.setAttribute('aria-expanded', String(isOpen));
-            }
-        });
-
-        trigger.addEventListener('mouseenter', () => {
-            if (isDesktopView()) {
-                openDropdown();
-            }
-        });
-
-        trigger.addEventListener('focus', () => {
-            if (isDesktopView()) {
-                openDropdown();
-            }
-        });
-
-        dropdown.addEventListener('mouseenter', () => {
-            if (isDesktopView()) {
-                clearCloseTimeout();
-            }
-        });
-
-        dropdown.addEventListener('mouseleave', () => {
-            if (isDesktopView()) {
-                scheduleClose();
-            }
-        });
-
-        menu.addEventListener('mouseenter', () => {
-            if (isDesktopView()) {
-                clearCloseTimeout();
-            }
-        });
-
-        menu.addEventListener('mouseleave', () => {
-            if (isDesktopView()) {
-                scheduleClose();
-            }
-        });
-
-        dropdown.addEventListener('keyup', event => {
-            if (event.key === 'Escape') {
-                closeDropdown();
-                trigger.focus();
-            }
-        });
-    });
-
-    document.addEventListener('click', event => {
-        const target = event.target;
-        if (!(target instanceof Element)) {
-            return;
-        }
-
-        if (!target.closest('.dropdown')) {
-            closeAllDropdowns();
-        }
-    });
-
-    document.addEventListener('focusin', event => {
-        const target = event.target;
-        if (!(target instanceof Element)) {
-            return;
-        }
-
-        if (!target.closest('.dropdown')) {
-            closeAllDropdowns();
-        }
-    });
 
     languageButtons.forEach(button => {
         button.addEventListener('click', () => {
